@@ -1,7 +1,18 @@
-<h1>Students</h1>
+<div style="background-color: #2E3192; padding: 20px;">
+  <a href="https://pbscybsec.github.io" style="text-decoration: none; color: #fff; display: flex; align-items: center;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 5px;">
+      <path fill-rule="evenodd" d="M11.854 1.146a.5.5 0 0 1 0 .708L7.207 6H13.5a.5.5 0 0 1 0 1H7.207l4.647 4.646a.5.5 0 1 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z"/>
+    </svg>
+    Back
+  </a>
+  <h1 style="font-size: 28px; color: #fff; margin-bottom: 20px; text-align: center;">Student List</h1>
 
-<ul>
-  <% @students.each do |student| %>
-    <li><%= student["name"] %>, <%= student["email"] %></li>
-  <% end %>
-</ul>
+  <ol style="list-style-type: decimal; padding: 0;">
+    <% @students.each_with_index do |student, index| %>
+      <li style="background-color: #f85a40; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; padding: 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
+        <span style="font-weight: bold; color: #fff; font-size: 16px;"> <%= index + 1 %>. <%= student["name"] %></span>
+        <span style="color: #fff; font-size: 14px;"><%= student["email"] %></span>
+      </li>
+    <% end %>
+  </ol>
+</div>
