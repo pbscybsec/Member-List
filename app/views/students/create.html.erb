@@ -1,0 +1,20 @@
+<h2>Create a new student:</h2>
+<%= form_tag students_path do %>
+  <label for="name">Name:</label>
+  <%= text_field_tag :name %><br>
+
+  <label for="email">Email:</label>
+  <%= text_field_tag :email %><br>
+
+  <label for="password">Password:</label>
+  <%= password_field_tag :password %><br>
+
+  <%= submit_tag "Create Student" %>
+<% end %>
+
+<% if flash[:success] %>
+  <div class="success"><%= flash[:success] %></div>
+<% end %>
+<% if flash[:error] %>
+  <div class="error"><%= flash[:error] %></div>
+<% end %>
